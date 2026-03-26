@@ -1,0 +1,172 @@
+<!doctype html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dinner Backoffice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <style>
+    .safe-top {
+      padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+    }
+    .safe-bottom {
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+    }
+    .ios-tap {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
+  <main class="px-4 pb-16 pt-8 max-[375px]:px-3 max-[375px]:pb-12 max-[375px]:pt-6 sm:px-6 sm:pb-20 sm:pt-12 lg:px-24 safe-top safe-bottom">
+    <header class="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <a href="./dinner-picker.html" class="ios-tap inline-flex items-center gap-2 bg-surface-container px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-surface sm:text-sm">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        <span>Back To Dinner</span>
+      </a>
+      <button id="clear-all" type="button" class="ios-tap inline-flex items-center gap-2 bg-error px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-error transition hover:scale-105 active:scale-95 sm:text-sm">
+        <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1; font-size: 18px;'>delete</span>
+        <span>Clear All</span>
+      </button>
+    </header>
+
+    <section class="relative overflow-hidden bg-surface-container-high p-6 max-[375px]:p-4 sm:p-10">
+      <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+      <div class="relative z-10 mx-auto max-w-4xl">
+        <h1 class="mb-2 font-headline text-3xl font-black uppercase leading-tight tracking-tighter text-primary max-[375px]:text-[1.7rem] sm:text-4xl">
+          Dinner Backoffice
+        </h1>
+        <p class="mb-6 text-base text-on-surface-variant max-[375px]:text-sm sm:text-lg">
+          Saved restaurant picks are listed below.
+        </p>
+        <p id="backlog-count" class="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-secondary">
+          0 saved picks
+        </p>
+
+        <p id="empty-state" class="rounded bg-surface px-4 py-3 text-sm text-on-surface-variant">
+          No saved restaurants yet. Add picks from the dinner page first.
+        </p>
+
+        <ul id="backlog-list" class="space-y-3"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-[#1a1a1a] px-4 py-6 safe-bottom">
+    <div class="mx-auto flex max-w-6xl items-center justify-end gap-4 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
+      <a href="./index.html" class="text-secondary">Restart Journey</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = "rachel_dinner_picks";
+      const backlogList = document.getElementById("backlog-list");
+      const backlogCount = document.getElementById("backlog-count");
+      const emptyState = document.getElementById("empty-state");
+      const clearAllButton = document.getElementById("clear-all");
+
+      if (!backlogList || !backlogCount || !emptyState || !clearAllButton) {
+        return;
+      }
+
+      function loadPicks() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) {
+            return [];
+          }
+          const parsed = JSON.parse(raw);
+          if (!Array.isArray(parsed)) {
+            return [];
+          }
+          return parsed
+            .map(function (item) {
+              return String(item).trim();
+            })
+            .filter(Boolean);
+        } catch (error) {
+          return [];
+        }
+      }
+
+      let picks = loadPicks();
+
+      function savePicks() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(picks));
+        } catch (error) {
+          // Keep page functional if storage is blocked.
+        }
+      }
+
+      function render() {
+        backlogList.innerHTML = "";
+        backlogCount.textContent = picks.length + " saved picks";
+
+        if (!picks.length) {
+          emptyState.classList.remove("hidden");
+          clearAllButton.setAttribute("disabled", "true");
+          clearAllButton.classList.add("opacity-50", "cursor-not-allowed");
+          return;
+        }
+
+        emptyState.classList.add("hidden");
+        clearAllButton.removeAttribute("disabled");
+        clearAllButton.classList.remove("opacity-50", "cursor-not-allowed");
+
+        picks.forEach(function (name, index) {
+          const item = document.createElement("li");
+          item.className = "flex items-center justify-between gap-3 rounded bg-surface px-4 py-3";
+
+          const label = document.createElement("p");
+          label.className = "text-sm font-semibold uppercase tracking-wide text-on-surface";
+          label.textContent = (index + 1) + ". " + name;
+
+          const removeButton = document.createElement("button");
+          removeButton.type = "button";
+          removeButton.dataset.removeIndex = String(index);
+          removeButton.className = "ios-tap inline-flex items-center gap-1 bg-error px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-error transition hover:scale-105 active:scale-95";
+          removeButton.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;">close</span><span>Remove</span>';
+
+          item.appendChild(label);
+          item.appendChild(removeButton);
+          backlogList.appendChild(item);
+        });
+      }
+
+      backlogList.addEventListener("click", function (event) {
+        const target = event.target.closest("button[data-remove-index]");
+        if (!target) {
+          return;
+        }
+        const index = Number(target.dataset.removeIndex);
+        if (Number.isNaN(index) || index < 0 || index >= picks.length) {
+          return;
+        }
+
+        picks.splice(index, 1);
+        savePicks();
+        render();
+      });
+
+      clearAllButton.addEventListener("click", function () {
+        if (!picks.length) {
+          return;
+        }
+        picks = [];
+        savePicks();
+        render();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
