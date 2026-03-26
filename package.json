@@ -2,7 +2,6 @@
   "name": "rachel-bday-project",
   "version": "1.0.0",
   "description": "A small personal web project made to celebrate Rachel's birthday.",
-  "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --postcss",
     "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --postcss --watch"
