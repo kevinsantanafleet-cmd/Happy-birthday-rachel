@@ -878,6 +878,14 @@ input:where([type='file']):focus {
   height: 2rem;
 }
 
+.h-\[100dvh\] {
+  height: 100dvh;
+}
+
+.min-h-\[100dvh\] {
+  min-height: 100dvh;
+}
+
 .min-h-\[100svh\] {
   min-height: 100svh;
 }
