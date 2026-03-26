@@ -1,0 +1,134 @@
+<!doctype html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Phase 4-5 | Dinner Picker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <style>
+    .kinetic-border {
+      box-shadow: 8px 8px 0 0 #bcff5f;
+    }
+    .safe-top {
+      padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+    }
+    .safe-bottom {
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+    }
+    .ios-tap {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
+  <main class="px-4 pb-16 pt-8 max-[375px]:px-3 max-[375px]:pb-12 max-[375px]:pt-6 sm:px-6 sm:pb-28 sm:pt-12 lg:px-24 safe-top safe-bottom">
+    <header class="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <span class="inline-block bg-primary px-3 py-1 font-headline text-xs font-bold uppercase tracking-widest text-on-primary sm:text-sm">Phase 4-5</span>
+      <a href="./spotify-grid.html" class="ios-tap inline-flex items-center gap-2 bg-surface-container px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-surface sm:text-sm">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        <span>Back</span>
+      </a>
+    </header>
+
+    <section class="relative overflow-hidden bg-surface-container-high p-6 max-[375px]:p-4 sm:p-10">
+      <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+      <div class="relative z-10 mx-auto max-w-3xl">
+        <h2 class="mb-3 font-headline text-3xl font-black uppercase leading-tight tracking-tighter text-primary max-[375px]:text-[1.75rem] sm:text-4xl md:text-5xl">
+          Pick Our Dinner Spot
+        </h2>
+        <p class="mb-6 text-base text-on-surface-variant max-[375px]:mb-4 max-[375px]:text-sm sm:text-lg">
+          Add restaurant ideas and pick one for tonight.
+        </p>
+
+        <form id="dinner-form" class="space-y-4">
+          <label for="restaurant-input" class="block text-xs font-semibold uppercase tracking-[0.15em] text-secondary">
+            Restaurant Name
+          </label>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <input
+              id="restaurant-input"
+              name="restaurant"
+              type="text"
+              placeholder="Type a restaurant name..."
+              class="h-12 w-full border-0 bg-surface px-4 text-base text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-tertiary sm:text-sm"
+              required
+            />
+            <button type="submit" class="ios-tap inline-flex h-12 items-center justify-center bg-tertiary px-6 font-headline text-sm font-bold uppercase tracking-wide text-on-tertiary transition hover:scale-105 active:scale-95">
+              Add Pick
+            </button>
+          </div>
+          <p id="dinner-feedback" class="text-sm text-secondary">No picks yet. Add your first restaurant.</p>
+        </form>
+
+        <div class="mt-6">
+          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-on-surface-variant">Your Picks</p>
+          <ul id="restaurant-list" class="flex flex-wrap gap-2"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-[#1a1a1a] px-4 py-6 safe-bottom">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
+      <span>Phase 5 / 5</span>
+      <a href="./index.html" class="text-secondary">Restart Journey</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById("dinner-form");
+      const input = document.getElementById("restaurant-input");
+      const feedback = document.getElementById("dinner-feedback");
+      const list = document.getElementById("restaurant-list");
+
+      if (!form || !input || !feedback || !list) {
+        return;
+      }
+
+      const picks = [];
+
+      function renderPicks() {
+        list.innerHTML = "";
+
+        picks.forEach(function (name, index) {
+          const item = document.createElement("li");
+          item.className = "inline-flex items-center gap-2 bg-surface px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-surface";
+          item.textContent = name;
+          if (index === 0) {
+            item.classList.add("kinetic-border");
+          }
+          list.appendChild(item);
+        });
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value.trim();
+
+        if (!value) {
+          feedback.textContent = "Please type a restaurant name first.";
+          input.focus();
+          return;
+        }
+
+        picks.unshift(value);
+        if (picks.length > 6) {
+          picks.pop();
+        }
+
+        renderPicks();
+        feedback.textContent = 'Top choice right now: "' + picks[0] + '"';
+        form.reset();
+        input.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

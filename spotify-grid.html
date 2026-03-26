@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Phase 2 | Spotify Grid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <style>
+    .safe-top {
+      padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+    }
+    .safe-bottom {
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+    }
+    .ios-tap {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
+  <main class="px-4 py-8 max-[375px]:px-3 max-[375px]:py-6 sm:px-6 sm:py-12 lg:px-24 safe-top safe-bottom">
+    <header class="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <span class="inline-block bg-primary px-3 py-1 font-headline text-xs font-bold uppercase tracking-widest text-on-primary sm:text-sm">Phase 2</span>
+      <a href="./spotify-title.html" class="ios-tap inline-flex items-center gap-2 bg-surface-container px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-surface sm:text-sm">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        <span>Back</span>
+      </a>
+    </header>
+
+    <section class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3">
+      <div class="relative flex flex-col gap-6 overflow-hidden bg-surface-container-high p-6 sm:p-8">
+        <div class="absolute -left-2 -top-2 h-8 w-8 bg-tertiary opacity-20 sm:h-12 sm:w-12"></div>
+        <span class="inline-block w-fit bg-secondary px-2 py-1 font-label text-xs font-bold uppercase tracking-widest text-on-secondary sm:px-3">Track One</span>
+        <p class="flex-grow font-body text-sm leading-relaxed text-on-surface-variant">
+          This is my favorite song actually and I think you liked it too yesterday so I put it here.
+        </p>
+        <div class="relative overflow-hidden bg-surface-container-lowest">
+          <div class="absolute -bottom-2 -right-2 h-6 w-6 rounded-full bg-secondary opacity-30 sm:h-8 sm:w-8"></div>
+          <div class="relative z-10 p-3 sm:p-4">
+            <iframe
+              title="Spotify Embed: Birthday Track"
+              src="https://open.spotify.com/embed/track/37de7PiZODyk476tuvStLq?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
+              style="min-height: 152px;"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex flex-col gap-6 overflow-hidden bg-surface-container-high p-6 sm:p-8">
+        <div class="absolute -right-2 -top-2 h-8 w-8 bg-primary opacity-20 sm:h-12 sm:w-12"></div>
+        <span class="inline-block w-fit bg-primary px-2 py-1 font-label text-xs font-bold uppercase tracking-widest text-on-primary sm:px-3">Track Two</span>
+        <p class="flex-grow font-body text-sm leading-relaxed text-on-surface-variant">
+          I think you like this one as well wkwkwk.
+        </p>
+        <div class="relative overflow-hidden bg-surface-container-lowest">
+          <div class="absolute -bottom-2 -left-2 h-6 w-6 rounded-full bg-tertiary opacity-30 sm:h-8 sm:w-8"></div>
+          <div class="relative z-10 p-3 sm:p-4">
+            <iframe
+              title="Spotify Embed: Celebration Track"
+              src="https://open.spotify.com/embed/track/5H7JrQsT47tMwNFiPLSnEi?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
+              style="min-height: 152px;"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex flex-col gap-6 overflow-hidden bg-tertiary p-6 text-on-tertiary sm:p-8">
+        <div class="absolute -right-2 -top-2 h-8 w-8 bg-primary opacity-40 sm:h-12 sm:w-12"></div>
+        <div class="absolute -bottom-2 -left-2 h-6 w-6 rounded-full bg-secondary opacity-30 sm:h-8 sm:w-8"></div>
+        <span class="inline-block w-fit bg-on-tertiary px-2 py-1 font-label text-xs font-bold uppercase tracking-widest text-tertiary sm:px-3">Full Playlist</span>
+        <p class="flex-grow font-body text-sm leading-relaxed text-on-tertiary">
+          We should make a playlist together on Spotify.
+        </p>
+        <div class="relative overflow-hidden bg-surface-container-lowest">
+          <div class="relative z-10 p-3 sm:p-4">
+            <iframe
+              title="Spotify Embed: Birthday Playlist"
+              src="https://open.spotify.com/embed/playlist/7sh8hRxiNcKdPQQorGGSaX?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
+              style="min-height: 152px;"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-[#1a1a1a] px-4 py-6 safe-bottom">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
+      <span>Phase 3 / 5</span>
+      <a href="./dinner-picker.html" class="text-secondary">Next: Dinner Picker</a>
+    </div>
+  </footer>
+</body>
+</html>
