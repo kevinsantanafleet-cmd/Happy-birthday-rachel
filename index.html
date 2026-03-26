@@ -1,202 +1,255 @@
-<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>26/03/2026</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><link href="./dist/output.css" rel="stylesheet"/><style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+<!doctype html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>26/03/2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    .text-glow-primary {
+      text-shadow: 0 0 20px rgba(255, 138, 169, 0.5);
+    }
+    .kinetic-border {
+      box-shadow: 8px 8px 0 0 #bcff5f;
+    }
+    .safe-top {
+      padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+    }
+    .safe-bottom {
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+    }
+    .ios-tap {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
+  <main class="relative">
+    <!-- Hero Section -->
+    <section class="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-4 max-[375px]:px-3 sm:px-6 lg:px-24 safe-top safe-bottom">
+      <div class="pointer-events-none absolute right-[-16%] top-24 select-none opacity-20 max-[375px]:right-[-24%] sm:right-0 sm:top-40">
+        <h2 class="rotate-12 font-headline text-[8rem] font-black leading-none tracking-tighter text-secondary max-[375px]:text-[6.25rem] sm:text-[13rem] md:text-[18rem]">23</h2>
+      </div>
+
+      <div class="z-10 w-full max-w-6xl">
+        <span class="mb-6 inline-block bg-primary px-3 py-1 font-headline text-sm font-bold uppercase tracking-widest text-on-primary max-[375px]:mb-4 max-[375px]:text-[11px] sm:px-4 sm:text-xl">26/03/2026</span>
+        <h1 class="break-words font-headline text-5xl font-black uppercase leading-[0.84] tracking-tighter text-glow-primary max-[375px]:text-[2.7rem] sm:text-6xl md:text-7xl lg:text-[8rem]">
+          Happy<br />Birthday<br /><span class="text-tertiary">Rachel</span>
+        </h1>
+        <div class="mt-8 flex flex-col items-start gap-6 max-[375px]:mt-6 max-[375px]:gap-4 sm:mt-12 sm:gap-8 md:flex-row">
+          <p class="max-w-2xl font-headline text-xl font-medium leading-tight text-on-surface-variant max-[375px]:text-base sm:text-2xl md:text-3xl">
+            This is not only your birthday but also the first day we met each other WKWKWK
+          </p>
+          <a href="#spotify-title" aria-label="Go to Spotify title section" class="ios-tap inline-flex flex-shrink-0 items-center justify-center bg-secondary p-3 text-on-secondary transition hover:-rotate-3 active:scale-95 max-[375px]:p-2.5 sm:p-4">
+            <span class="material-symbols-outlined text-4xl sm:text-5xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spotify Section Title Card -->
+    <section id="spotify-title" class="scroll-mt-6 flex min-h-[100svh] items-center px-4 py-6 max-[375px]:px-3 max-[375px]:py-4 sm:px-6 sm:py-10 lg:px-24">
+      <div class="relative flex min-h-[82svh] w-full flex-col justify-center overflow-hidden bg-surface-container p-6 max-[375px]:min-h-[86svh] max-[375px]:p-4 sm:p-12">
+        <div class="absolute left-4 top-4 h-6 w-6 bg-primary sm:h-8 sm:w-8"></div>
+        <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-secondary sm:h-12 sm:w-12"></div>
+
+        <div class="relative z-10 max-w-3xl">
+          <span class="mb-6 inline-block bg-tertiary px-3 py-1 font-headline text-xs font-bold uppercase tracking-widest text-on-tertiary sm:mb-8 sm:px-4 sm:text-sm">Sonic Journey</span>
+          <p class="mb-8 font-body text-xl font-medium leading-relaxed text-on-surface max-[375px]:mb-6 max-[375px]:text-lg sm:text-2xl md:text-3xl">
+            I actually do not know what your favorite songs are, so these are my best guesses based on our hangouts.
+          </p>
+          <a href="#spotify-grid" class="ios-tap inline-flex items-center gap-2 font-body text-sm font-semibold uppercase tracking-wide text-secondary transition hover:scale-105 active:scale-95 sm:gap-3 sm:text-base">
+            <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1; font-size: 18px;'>music_note</span>
+            <span>My guesses</span>
+          </a>
+        </div>
+
+        <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+      </div>
+    </section>
+
+    <!-- Spotify Tracks Grid -->
+    <section id="spotify-grid" class="scroll-mt-6 px-4 py-8 max-[375px]:px-3 max-[375px]:py-6 sm:px-6 sm:py-12 lg:px-24">
+      <div class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3">
+        <div class="relative flex flex-col gap-6 overflow-hidden bg-surface-container-high p-6 sm:p-8">
+          <div class="absolute -left-2 -top-2 h-8 w-8 bg-tertiary opacity-20 sm:h-12 sm:w-12"></div>
+          <span class="inline-block w-fit bg-secondary px-2 py-1 font-label text-xs font-bold uppercase tracking-widest text-on-secondary sm:px-3">Track One</span>
+          <p class="flex-grow font-body text-sm leading-relaxed text-on-surface-variant">
+            This is my favorite song actually and I think you liked it too yesterday so I put it here.
+          </p>
+          <div class="relative overflow-hidden bg-surface-container-lowest">
+            <div class="absolute -bottom-2 -right-2 h-6 w-6 rounded-full bg-secondary opacity-30 sm:h-8 sm:w-8"></div>
+            <div class="relative z-10 p-3 sm:p-4">
+              <iframe
+                title="Spotify Embed: Birthday Track"
+                src="https://open.spotify.com/embed/track/37de7PiZODyk476tuvStLq?utm_source=generator&theme=0"
+                width="100%"
+                height="152"
+                style="min-height: 152px;"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col gap-6 overflow-hidden bg-surface-container-high p-6 sm:p-8">
+          <div class="absolute -right-2 -top-2 h-8 w-8 bg-primary opacity-20 sm:h-12 sm:w-12"></div>
+          <span class="inline-block w-fit bg-primary px-2 py-1 font-label text-xs font-bold uppercase tracking-widest text-on-primary sm:px-3">Track Two</span>
+          <p class="flex-grow font-body text-sm leading-relaxed text-on-surface-variant">
+            I think you like this one as well wkwkwk.
+          </p>
+          <div class="relative overflow-hidden bg-surface-container-lowest">
+            <div class="absolute -bottom-2 -left-2 h-6 w-6 rounded-full bg-tertiary opacity-30 sm:h-8 sm:w-8"></div>
+            <div class="relative z-10 p-3 sm:p-4">
+              <iframe
+                title="Spotify Embed: Celebration Track"
+                src="https://open.spotify.com/embed/track/5H7JrQsT47tMwNFiPLSnEi?utm_source=generator&theme=0"
+                width="100%"
+                height="152"
+                style="min-height: 152px;"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex flex-col gap-6 overflow-hidden bg-tertiary p-6 text-on-tertiary sm:p-8">
+          <div class="absolute -right-2 -top-2 h-8 w-8 bg-primary opacity-40 sm:h-12 sm:w-12"></div>
+          <div class="absolute -bottom-2 -left-2 h-6 w-6 rounded-full bg-secondary opacity-30 sm:h-8 sm:w-8"></div>
+          <span class="inline-block w-fit bg-on-tertiary px-2 py-1 font-label text-xs font-bold uppercase tracking-widest text-tertiary sm:px-3">Full Playlist</span>
+          <p class="flex-grow font-body text-sm leading-relaxed text-on-tertiary">
+            We should make a playlist together on Spotify.
+          </p>
+          <div class="relative overflow-hidden bg-surface-container-lowest">
+            <div class="relative z-10 p-3 sm:p-4">
+              <iframe
+                title="Spotify Embed: Birthday Playlist"
+                src="https://open.spotify.com/embed/playlist/7sh8hRxiNcKdPQQorGGSaX?utm_source=generator&theme=0"
+                width="100%"
+                height="152"
+                style="min-height: 152px;"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dinner Picker Card -->
+    <section class="px-4 pb-16 pt-8 max-[375px]:px-3 max-[375px]:pb-12 max-[375px]:pt-6 sm:px-6 sm:pb-28 sm:pt-12 lg:px-24 safe-bottom">
+      <div class="relative overflow-hidden bg-surface-container-high p-6 max-[375px]:p-4 sm:p-10">
+        <div class="pointer-events-none absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+        <div class="relative z-10 mx-auto max-w-3xl">
+          <h2 class="mb-3 font-headline text-3xl font-black uppercase leading-tight tracking-tighter text-primary max-[375px]:text-[1.75rem] sm:text-4xl md:text-5xl">
+            Pick Our Dinner Spot
+          </h2>
+          <p class="mb-6 text-base text-on-surface-variant max-[375px]:mb-4 max-[375px]:text-sm sm:text-lg">
+            Add restaurant ideas and pick one for tonight.
+          </p>
+
+          <form id="dinner-form" class="space-y-4">
+            <label for="restaurant-input" class="block text-xs font-semibold uppercase tracking-[0.15em] text-secondary">
+              Restaurant Name
+            </label>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <input
+                id="restaurant-input"
+                name="restaurant"
+                type="text"
+                placeholder="Type a restaurant name..."
+                class="h-12 w-full border-0 bg-surface px-4 text-base text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-tertiary sm:text-sm"
+                required
+              />
+              <button type="submit" class="ios-tap inline-flex h-12 items-center justify-center bg-tertiary px-6 font-headline text-sm font-bold uppercase tracking-wide text-on-tertiary transition hover:scale-105 active:scale-95">
+                Add Pick
+              </button>
+            </div>
+            <p id="dinner-feedback" class="text-sm text-secondary">No picks yet. Add your first restaurant.</p>
+          </form>
+
+          <div class="mt-6">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-on-surface-variant">Your Picks</p>
+            <ul id="restaurant-list" class="flex flex-wrap gap-2"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-[#1a1a1a] px-4 py-8 sm:py-12 safe-bottom">
+    <div class="flex flex-col items-center justify-center gap-4">
+      <div class="flex flex-wrap justify-center gap-6 sm:gap-12">
+        <a class="font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em] text-[#adaaaa] transition-colors hover:text-[#ff8aa9]" href="#">STAY_LOUD</a>
+        <a class="font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em] text-[#adaaaa] transition-colors hover:text-[#ff8aa9]" href="#">KEEP_DANCING</a>
+      </div>
+      <p class="text-center font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em] text-[#00eefc]">DESIGNED FOR THE SONIC ARCHITECT (C) 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById("dinner-form");
+      const input = document.getElementById("restaurant-input");
+      const feedback = document.getElementById("dinner-feedback");
+      const list = document.getElementById("restaurant-list");
+
+      if (!form || !input || !feedback || !list) {
+        return;
+      }
+
+      const picks = [];
+
+      function renderPicks() {
+        list.innerHTML = "";
+
+        picks.forEach(function (name, index) {
+          const item = document.createElement("li");
+          item.className = "inline-flex items-center gap-2 bg-surface px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-surface";
+          item.textContent = name;
+          if (index === 0) {
+            item.classList.add("kinetic-border");
+          }
+          list.appendChild(item);
+        });
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value.trim();
+
+        if (!value) {
+          feedback.textContent = "Please type a restaurant name first.";
+          input.focus();
+          return;
         }
-        .text-glow-primary {
-            text-shadow: 0 0 20px rgba(255, 138, 169, 0.5);
+
+        picks.unshift(value);
+        if (picks.length > 6) {
+          picks.pop();
         }
-        .text-glow-secondary {
-            text-shadow: 0 0 20px rgba(0, 238, 252, 0.5);
-        }
-        .kinetic-border {
-            box-shadow: 8px 8px 0px 0px #bcff5f;
-        }
-    </style>
-</head><body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
-<main class="relative">
-<!-- Hero Section: Kinetic Typography -->
-<section class="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-24 pt-16 sm:pt-20 overflow-hidden relative">
-<div class="absolute top-20 sm:top-40 right-[-15%] sm:right-[0%] opacity-20 pointer-events-none select-none">
-<h2 class="text-[10rem] sm:text-[15rem] md:text-[20rem] font-headline font-black text-secondary leading-none tracking-tighter rotate-12" style="">23</h2>
-</div>
-<div class="z-10 max-w-6xl">
-<span class="inline-block bg-primary text-on-primary font-headline font-bold px-3 sm:px-4 py-1 mb-6 text-sm sm:text-xl tracking-widest uppercase" style="">26/03/2026</span>
-<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[8rem] font-headline font-black leading-[0.85] tracking-tighter uppercase break-words text-glow-primary" style="">
-Happy<br/>Birthday<br/><span class="text-tertiary" style="">Rachel</span>
-</h1>
-<div class="mt-8 sm:mt-12 flex flex-col sm:flex-col md:flex-row gap-6 sm:gap-8 items-start">
-<p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-headline font-medium text-on-surface-variant max-w-2xl leading-tight" style="">
-This is not only your birthday but also the first day we met each other WKWKWK
-</p>
-<div class="bg-secondary p-3 sm:p-4 flex items-center justify-center transform hover:-rotate-3 transition-transform cursor-crosshair flex-shrink-0">
-<span class="material-symbols-outlined text-on-secondary text-3xl sm:text-4xl md:text-5xl" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
-</div>
-</div>
-</div>
-</section>
 
-<!-- 3D Cake Visual Container -->
-<section class="px-4 sm:px-6 lg:px-24 py-8 sm:py-12">
-<div class="bg-surface-container-high relative overflow-hidden h-[300px] sm:h-[450px] md:h-[600px] flex items-end p-6 sm:p-12">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
-<img alt="Modern minimalist three-tier birthday cake with neon pink frosting drips and vibrant teal candles against a dark brutalist concrete background" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WbaleKaZHyXtuoufMui083BhYMalIPCn7cmSa5auo3P5jFSlBF1wh0TwFQzUwpZvIrtczCo4_VLpGc-S66NFczCqK930HPbjgDdK98m78aWH-6q_0ArOpQcxo9d7Pz-FmlVWc3fgyAQtH2PuO6WkDGN3sJ7joXCZrNotwFTrWegD3WEl1uQWd0hcxR7gfxoTCC2fE_mRSNleYP90x5tG8AIVmKt6SppljVNMsWf7kxJXGeseb1VnVYBKViGA4V4RiDoJb8KzzV4a" style=""/>
-<div class="relative z-10">
-<h3 class="text-2xl sm:text-3xl md:text-5xl font-headline font-black text-primary uppercase italic mb-2 tracking-tighter" style="">Fake ahh birthday cake</h3>
-<p class="text-on-surface-variant font-label text-xs sm:text-sm uppercase tracking-widest" style="">Can I give you the real cake tonight? hahah</p>
-</div>
-<div class="absolute top-4 sm:top-8 right-4 sm:right-8 bg-tertiary text-on-tertiary p-4 sm:p-6 kinetic-border">
-<span class="text-2xl sm:text-4xl font-headline font-bold" style="">100%</span>
-<p class="text-[8px] sm:text-[10px] uppercase font-bold leading-tight" style="">Vibe Density</p>
-</div>
-</div>
-</section>
-
-<!-- Spotify Section Title Card -->
-<section id="tracks" class="px-4 sm:px-6 lg:px-24 py-8 sm:py-12">
-<div class="bg-surface-container relative overflow-hidden p-6 sm:p-12 flex flex-col justify-center min-h-[250px] sm:min-h-[300px]">
-<!-- Geometric Anchors -->
-<div class="absolute top-4 left-4 w-6 sm:w-8 h-6 sm:h-8 bg-primary"></div>
-<div class="absolute bottom-4 right-4 w-8 sm:w-12 h-8 sm:h-12 rounded-full bg-secondary"></div>
-<!-- Content -->
-<div class="relative z-10 max-w-3xl">
-<span class="inline-block bg-tertiary text-on-tertiary font-headline font-bold px-3 sm:px-4 py-1 mb-6 sm:mb-8 text-xs sm:text-sm tracking-widest uppercase" style="">Sonic Journey</span>
-<p class="text-lg sm:text-2xl md:text-3xl font-body font-medium text-on-surface leading-relaxed mb-6 sm:mb-8" style="">
-I actually don't know what you're favorite songs are so I make some guesses based on when we hangout haha</p>
-<div class="flex items-center gap-2 sm:gap-3 text-secondary font-body font-medium text-xs sm:text-base tracking-wide hover:scale-105 transition-transform cursor-pointer">
-<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1; font-size: 16px;'>music_note</span>
-<span>My guesses</span>
-</div>
-</div>
-<!-- Ambient Pattern -->
-<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
-</div>
-</section>
-
-<!-- Spotify Tracks Grid -->
-<section class="px-4 sm:px-6 lg:px-24 py-8 sm:py-12">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-<!-- Track Card 1 -->
-<div class="bg-surface-container-high relative overflow-hidden p-6 sm:p-8 flex flex-col gap-6">
-<!-- Geometric Accent -->
-<div class="absolute -top-2 -left-2 w-8 sm:w-12 h-8 sm:h-12 bg-tertiary opacity-20"></div>
-<!-- Badge -->
-<span class="inline-block bg-secondary text-on-secondary font-label font-bold px-2 sm:px-3 py-1 text-xs tracking-widest uppercase w-fit" style="">Track One</span>
-<!-- Body Text -->
-<p class="text-on-surface-variant font-body text-xs sm:text-sm leading-relaxed flex-grow" style="">
-This is my favorite song actually and I think you liked it too yesterday so put it here wkwk</p>
-<!-- Spotify Embed -->
-<div class="bg-surface-container-lowest relative overflow-hidden">
-<div class="absolute -bottom-2 -right-2 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-secondary opacity-30"></div>
-<div class="relative z-10 p-3 sm:p-4">
-<iframe 
-    title="Spotify Embed: Birthday Track" 
-    src="https://open.spotify.com/embed/track/37de7PiZODyk476tuvStLq?utm_source=generator&theme=0" 
-    width="100%" 
-    height="152px" 
-    style="minHeight: 152px;" 
-    frameBorder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-</iframe>
-</div>
-</div>
-<!-- CTA -->
-<div class="flex items-center gap-2 text-primary font-body font-medium text-xs uppercase tracking-wide hover:scale-105 transition-transform cursor-pointer">
-<span class="material-symbols-outlined" style='font-size: 14px; font-variation-settings: "FILL" 1;'>play_circle</span>
-<span>This button doesn't work</span>
-</div>
-</div>
-
-<!-- Track Card 2 -->
-<div class="bg-surface-container-high relative overflow-hidden p-6 sm:p-8 flex flex-col gap-6">
-<!-- Geometric Accent -->
-<div class="absolute -top-2 -right-2 w-8 sm:w-12 h-8 sm:h-12 bg-primary opacity-20"></div>
-<!-- Badge -->
-<span class="inline-block bg-primary text-on-primary font-label font-bold px-2 sm:px-3 py-1 text-xs tracking-widest uppercase w-fit" style="">Track Two</span>
-<!-- Body Text -->
-<p class="text-on-surface-variant font-body text-xs sm:text-sm leading-relaxed flex-grow" style="">
-I think you like this one as well wkwkwk</p>
-<!-- Spotify Embed -->
-<div class="bg-surface-container-lowest relative overflow-hidden">
-<div class="absolute -bottom-2 -left-2 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-tertiary opacity-30"></div>
-<div class="relative z-10 p-3 sm:p-4">
-<iframe 
-    title="Spotify Embed: Celebration Track" 
-    src="https://open.spotify.com/embed/track/5H7JrQsT47tMwNFiPLSnEi?utm_source=generator&theme=0" 
-    width="100%" 
-    height="152px" 
-    style="minHeight: 152px;" 
-    frameBorder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-</iframe>
-</div>
-</div>
-<!-- CTA -->
-<div class="flex items-center gap-2 text-secondary font-body font-medium text-xs uppercase tracking-wide hover:scale-105 transition-transform cursor-pointer">
-<span class="material-symbols-outlined" style='font-size: 14px; font-variation-settings: "FILL" 1;'>play_circle</span>
-<span>This also doesn't work</span>
-</div>
-</div>
-
-<!-- Playlist Card -->
-<div class="bg-tertiary text-on-tertiary relative overflow-hidden p-6 sm:p-8 flex flex-col gap-6">
-<!-- Geometric Accent -->
-<div class="absolute -top-2 -right-2 w-8 sm:w-12 h-8 sm:h-12 bg-primary opacity-40"></div>
-<div class="absolute -bottom-2 -left-2 w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-secondary opacity-30"></div>
-<!-- Badge -->
-<span class="inline-block bg-on-tertiary text-tertiary font-label font-bold px-2 sm:px-3 py-1 text-xs tracking-widest uppercase w-fit" style="">Full Playlist</span>
-<!-- Body Text -->
-<p class="text-on-tertiary font-body text-xs sm:text-sm leading-relaxed flex-grow" style="">
-We should make a playlist together on spotify</p>
-<!-- Spotify Embed -->
-<div class="bg-surface-container-lowest relative overflow-hidden">
-<div class="relative z-10 p-3 sm:p-4">
-<iframe 
-    title="Spotify Embed: Birthday Playlist" 
-    src="https://open.spotify.com/embed/playlist/7sh8hRxiNcKdPQQorGGSaX?utm_source=generator&theme=0" 
-    width="100%" 
-    height="152px" 
-    style="minHeight: 152px;" 
-    frameBorder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-</iframe>
-</div>
-</div>
-<!-- CTA -->
-<div class="flex items-center gap-2 text-on-tertiary font-body font-medium text-xs uppercase tracking-wide hover:scale-105 transition-transform cursor-pointer">
-<span class="material-symbols-outlined" style='font-size: 14px; font-variation-settings: "FILL" 1;'>library_music</span>
-<span>Add my spotify: Pablosantana</span>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Dynamic Call to Action -->
-<section class="px-4 sm:px-6 lg:px-24 pb-16 sm:pb-32 pt-8 sm:pt-12">
-<div class="bg-error p-8 sm:p-16 relative overflow-hidden flex flex-col items-center text-center">
-<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
-<h2 class="text-3xl sm:text-5xl md:text-7xl font-headline font-black text-on-error uppercase tracking-tighter mb-6 sm:mb-8 leading-none" style="">WHAT SHOULD I GET<br/>FOR YOUR BIRTHDAY?</h2>
-<button class="bg-on-error text-error px-6 sm:px-12 py-3 sm:py-5 font-headline font-bold text-lg sm:text-2xl uppercase tracking-tighter flex items-center gap-2 sm:gap-4 hover:scale-105 active:scale-95 transition-all" style="">
-BDAY WISHLIST
-<span class="material-symbols-outlined text-2xl sm:text-3xl" style="">keyboard_double_arrow_right</span>
-</button>
-<!-- Geometric Anchors -->
-<div class="absolute top-4 left-4 w-6 sm:w-8 h-6 sm:h-8 bg-tertiary"></div>
-<div class="absolute bottom-4 right-4 w-8 sm:w-12 h-8 sm:h-12 rounded-full bg-secondary"></div>
-</div>
-</section>
-</main>
-
-<!-- Footer -->
-<footer class="bg-[#0e0e0e] flex flex-col items-center justify-center gap-4 py-8 sm:py-12 w-full full-width border-t-0 bg-[#1a1a1a] px-4">
-<div class="flex gap-6 sm:gap-12 flex-wrap justify-center">
-<a class="font-['Inter'] text-[8px] sm:text-[10px] uppercase tracking-[0.2em] font-medium text-[#adaaaa] hover:text-[#ff8aa9] transition-colors" href="#" style="">STAY_LOUD</a>
-<a class="font-['Inter'] text-[8px] sm:text-[10px] uppercase tracking-[0.2em] font-medium text-[#adaaaa] hover:text-[#ff8aa9] transition-colors" href="#" style="">KEEP_DANCING</a>
-</div>
-<p class="font-['Inter'] text-[8px] sm:text-[10px] uppercase tracking-[0.2em] font-medium text-[#00eefc] text-center" style="">DESIGNED FOR THE SONIC ARCHITECT © 2026</p>
-</footer>
-
-</body></html>
-
+        renderPicks();
+        feedback.textContent = 'Top choice right now: "' + picks[0] + '"';
+        form.reset();
+        input.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

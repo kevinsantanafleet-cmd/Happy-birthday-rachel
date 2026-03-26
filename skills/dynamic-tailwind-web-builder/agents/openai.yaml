@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dynamic Web Builder"
+  short_description: "Build dynamic Tailwind HTML + JS websites"
+  default_prompt: "Use $dynamic-tailwind-web-builder to build a responsive, dynamic website in HTML with Tailwind CSS and vanilla JavaScript."
