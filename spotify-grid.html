@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Phase 2 | Spotify Grid</title>
+  <title>Spotify Grid</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <link href="./dist/output.css" rel="stylesheet" />
@@ -26,7 +26,6 @@
 <body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-tertiary selection:text-on-tertiary">
   <main class="px-4 py-8 max-[375px]:px-3 max-[375px]:py-6 sm:px-6 sm:py-12 lg:px-24 safe-top safe-bottom">
     <header class="mb-6 flex flex-wrap items-center justify-between gap-3">
-      <span class="inline-block bg-primary px-3 py-1 font-headline text-xs font-bold uppercase tracking-widest text-on-primary sm:text-sm">Phase 2</span>
       <a href="./spotify-title.html" class="ios-tap inline-flex items-center gap-2 bg-surface-container px-3 py-2 text-xs font-semibold uppercase tracking-wide text-on-surface sm:text-sm">
         <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
         <span>Back</span>
@@ -103,11 +102,17 @@
         </div>
       </div>
     </section>
+
+    <div class="mt-8 flex justify-center">
+      <a href="./dinner-picker.html" class="ios-tap inline-flex items-center gap-2 bg-tertiary px-5 py-3 font-headline text-xs font-bold uppercase tracking-widest text-on-tertiary transition hover:scale-105 active:scale-95 sm:text-sm">
+        <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1; font-size: 18px;'>restaurant</span>
+        <span>Go To Dinner Container</span>
+      </a>
+    </div>
   </main>
 
   <footer class="w-full bg-[#1a1a1a] px-4 py-6 safe-bottom">
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
-      <span>Phase 3 / 5</span>
+    <div class="mx-auto flex max-w-6xl items-center justify-end gap-4 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
       <a href="./dinner-picker.html" class="text-secondary">Next: Dinner Picker</a>
     </div>
   </footer>
